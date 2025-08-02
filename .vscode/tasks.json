@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start Statly Backend",
+			"type": "shell",
+			"command": "C:/Users/dimam/Desktop/Statly/.venv/Scripts/python.exe",
+			"args": [
+				"-m",
+				"uvicorn",
+				"test_server:app",
+				"--reload",
+				"--port",
+				"8000"
+			],
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

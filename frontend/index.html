@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 Statly - Analisi Statistica Excel</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1><i class="fas fa-chart-line"></i> Statly</h1>
+            <p>Analisi Statistica Semplificata per File Excel</p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Upload Section -->
+        <section class="upload-section" id="uploadSection">
+            <div class="upload-card">
+                <div class="upload-icon">
+                    <i class="fas fa-file-excel"></i>
+                </div>
+                <h2>Carica il tuo file Excel</h2>
+                <p>Supporta file .xlsx e .xls con dati tabellari</p>
+                
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="fileInput" accept=".xlsx,.xls" style="display: none;">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Trascina qui il file o <span class="upload-link">clicca per selezionare</span></p>
+                        <small>Formati supportati: .xlsx, .xls</small>
+                    </div>
+                </div>
+                
+                <div class="upload-buttons">
+                    <button class="btn btn-primary" id="selectFileBtn">
+                        <i class="fas fa-folder-open"></i> Seleziona File
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- File Info Section (Hidden initially) -->
+        <section class="file-info-section" id="fileInfoSection" style="display: none;">
+            <div class="info-card">
+                <h3><i class="fas fa-info-circle"></i> Informazioni File</h3>
+                <div class="file-details" id="fileDetails">
+                    <!-- Dettagli del file verranno inseriti qui via JavaScript -->
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" id="analyzeBtn">
+                        <i class="fas fa-analytics"></i> Analizza Dati
+                    </button>
+                    <button class="btn btn-success" id="generateReportBtn">
+                        <i class="fas fa-file-pdf"></i> Genera Report PDF
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis Results Section (Hidden initially) -->
+        <section class="results-section" id="resultsSection" style="display: none;">
+            <div class="results-card">
+                <h3><i class="fas fa-chart-bar"></i> Risultati Analisi</h3>
+                
+                <!-- Statistics Summary -->
+                <div class="stats-summary" id="statsSummary">
+                    <!-- Statistiche di base -->
+                </div>
+                
+                <!-- Charts Container -->
+                <div class="charts-container" id="chartsContainer">
+                    <!-- I grafici verranno inseriti qui -->
+                </div>
+                
+                <!-- Download Section -->
+                <div class="download-section">
+                    <button class="btn btn-success" id="downloadPdfBtn">
+                        <i class="fas fa-download"></i> Scarica Report PDF
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <p id="loadingText">Caricamento in corso...</p>
+            </div>
+        </div>
+
+        <!-- Error Messages -->
+        <div class="error-message" id="errorMessage" style="display: none;">
+            <div class="error-content">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span id="errorText"></span>
+                <button class="error-close" onclick="hideError()">×</button>
+            </div>
+        </div>
+
+        <!-- Success Messages -->
+        <div class="success-message" id="successMessage" style="display: none;">
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <span id="successText"></span>
+                <button class="success-close" onclick="hideSuccess()">×</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Statly - Analisi Statistica Semplificata</p>
+            <p>Progetto open source per fini didattici</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
